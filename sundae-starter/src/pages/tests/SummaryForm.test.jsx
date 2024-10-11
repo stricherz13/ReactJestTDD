@@ -29,7 +29,7 @@ test('popover responds to hover', async () => {
     const user = userEvent.setup();
     render(<SummaryForm/>);
 
-    const nullPopover = screen.queyByText(/no ice cream will actually be delivered/i);
+    const nullPopover = screen.queryByText(/no ice cream will actually be delivered/i);
     expect(nullPopover).not.toBeInTheDocument();
 
     const termsAndConditions = screen.getByText(/terms and conditions/i);
@@ -40,6 +40,6 @@ test('popover responds to hover', async () => {
     await user.unhover(termsAndConditions);
     const nullPopoverAgain = screen.queryByText(/no ice cream will actually be delivered/i);
     expect(nullPopoverAgain).not.toBeInTheDocument();
-};
+});
 
 
